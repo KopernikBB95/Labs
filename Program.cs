@@ -1,29 +1,48 @@
-﻿Console.WriteLine("##### Week 3, Task 4 (3.4) #####");
+﻿Console.WriteLine("##### Week 3, Task 3 (3.3) #####");
 Console.WriteLine("");
 
-int turnsAmount;
+int rowMax;
 
 while (true)
 {
-    Console.WriteLine("Podaj liczbę tur od 1 do 10: ");
-    bool correctFormat = int.TryParse(Console.ReadLine(), out turnsAmount);
-
-    if (!correctFormat)
+   Console.WriteLine("Podaj wysokość choinki. (Liczba od 2-10 pls)");
+   bool correctRowMax = int.TryParse(Console.ReadLine(), out rowMax);
+if (!correctRowMax)
     {
-        Console.WriteLine("Wpisz liczbę całkowitą (Nie tekst, nie liczbę z przecinkiem pls)");
+        Console.WriteLine("Podaj liczbę od 2-10. Nie tekst, nie liczbę z przecinkiem");
         continue;
     }
-
-    if (turnsAmount < 1 || turnsAmount > 10)
+if (rowMax < 2 || rowMax > 10)
     {
-        Console.WriteLine("Ziomuś, ale w przedziale od 1 do 10 pls :()");
+        Console.WriteLine("Podaj liczbe w przedziale 2-10 pls");
         continue;
     }
     break;
 }
-Console.WriteLine($"Wybrales {turnsAmount} tur.");
-for (int turn = 1; turn <= turnsAmount; turn++)
-{
-    Console.WriteLine($"Tura nr: {turn}");
-}
 
+for (int row = 1; row <= rowMax; row++)
+{
+    for (int space = 1; space <= rowMax-row; space ++)
+    {
+         Console.Write(" ");
+    }
+    for (int col = 1; col <= 2*row-1; col++)
+    {
+        Console.Write($"*");
+    }
+    Console.WriteLine();
+}
+for (int space = 1; space <= rowMax-1; space ++)
+{
+    Console.Write(" ");
+} 
+Console.Write("*");
+Console.WriteLine();
+
+        Console.WriteLine("     *");                  
+        Console.WriteLine("    ***");                
+        Console.WriteLine("   *****");               
+        Console.WriteLine("  *******");              
+        Console.WriteLine(" *********");             
+        Console.WriteLine("***********");            
+        Console.WriteLine("     *");
